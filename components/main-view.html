@@ -1,0 +1,97 @@
+<!-- Main View -->
+<div class="main-content">
+  <!-- Empty state: shown until the user picks a bucket. -->
+  <div class="main-empty" id="mainEmpty">
+    <div class="upload-icon-wrapper">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </div>
+    <div class="upload-title">Select a bucket</div>
+    <div class="instructions">
+      <p>Pick a bucket from the left sidebar to view its files, upload, or manage configuration.</p>
+    </div>
+  </div>
+
+  <!-- Bucket view: shown once a bucket has been chosen. -->
+  <div class="bucket-view" id="bucketView" hidden>
+    <div class="bucket-header-row">
+      <div class="bucket-header-left">
+        <svg class="bucket-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <span class="bucket-title" id="bucketTitle">bucket</span>
+      </div>
+      <div class="bucket-header-right">
+        <button class="icon-btn" id="refreshBucket" title="Refresh">↻</button>
+      </div>
+    </div>
+
+    <div class="top-nav">
+      <div class="nav-pills" id="bucketNavPills">
+        <button class="nav-pill active" data-tab="files">Files</button>
+        <button class="nav-pill" data-tab="transfer">Transfer</button>
+        <button class="nav-pill" data-tab="statistics">Statistics</button>
+        <button class="nav-pill" data-tab="configuration">Configuration</button>
+      </div>
+    </div>
+
+    <div class="bucket-panels">
+      <!-- Files -->
+      <section class="bucket-panel" data-panel="files">
+        <div class="files-toolbar">
+          <div class="files-breadcrumbs" id="filesBreadcrumbs"></div>
+          <div class="files-search">
+            <input type="text" class="form-input" id="filesSearch" placeholder="Filter by name…" autocomplete="off">
+          </div>
+        </div>
+        <div class="files-table" id="filesTable">
+          <div class="files-loading">Loading…</div>
+        </div>
+      </section>
+
+      <!-- Transfer List -->
+      <section class="bucket-panel" data-panel="transfer" hidden>
+        <div class="transfer-list-container" id="transferListContainer">
+          <div class="transfer-list-header">
+            <div class="transfer-list-title">Transfer History</div>
+            <div class="transfer-list-actions">
+              <button class="btn btn-secondary" id="transferClearAllBtn" type="button">Clear all</button>
+            </div>
+          </div>
+          <div class="transfer-list" id="transferList"></div>
+          <div class="transfer-empty" id="transferEmpty">No transfers recorded yet.</div>
+        </div>
+      </section>
+
+      <!-- Statistics -->
+      <section class="bucket-panel" data-panel="statistics" hidden>
+        <div class="stats-container" id="statsContainer">
+          <div class="stats-loading">Loading statistics…</div>
+        </div>
+      </section>
+
+      <!-- Statistics -->
+      <section class="bucket-panel" data-panel="configuration" hidden>
+        <div class="configuration-container" id="configurationContainer">
+          <div class="configuration-header">
+            <div class="configuration-title">Local Folder</div>
+            <div class="configuration-sub">Map <span id="configurationBucketName" class="configuration-bucket-chip">—</span> to a folder on this machine. Saved to <code>config.json</code>.</div>
+          </div>
+
+          <div class="configuration-mapping">
+            <div class="configuration-mapping-row">
+              <input type="text" class="form-input configuration-path-input" id="configurationPathInput"
+                     placeholder="(empty — no local folder)" autocomplete="off">
+            </div>
+            <div class="configuration-mapping-actions">
+              <button type="button" class="btn btn-secondary" id="configurationBrowseBtn">Browse…</button>
+              <button type="button" class="btn btn-secondary" id="configurationClearBtn" disabled>Clear</button>
+              <button type="button" class="btn btn-primary" id="configurationSaveMappings" disabled>Save</button>
+            </div>
+          </div>
+
+          <div class="configuration-status" id="configurationStatus" role="status" aria-live="polite"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

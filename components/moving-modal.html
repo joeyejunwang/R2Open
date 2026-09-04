@@ -1,0 +1,26 @@
+<!-- Moving Modal -->
+<div class="modal-overlay" id="movingModal">
+  <div class="modal" role="dialog" aria-labelledby="movingTitle">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" id="movingTitle">Move to...</div>
+        <div class="modal-subtitle" id="movingSubtitle">Select a destination folder</div>
+      </div>
+      <button class="close-btn" id="closeMoving" aria-label="Close">×</button>
+    </div>
+
+    <div class="modal-body-folders">
+      <div class="folders-table" id="foldersTable">
+        <div class="files-list-body" id="foldersListBody"></div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <div class="footer-info" id="footerInfo">Select a folder or current location</div>
+      <div class="footer-actions">
+        <button type="button" class="btn btn-secondary" id="cancelMoving">Cancel</button>
+        <button type="button" class="btn btn-primary" id="saveMoving">Move Here</button>
+      </div>
+    </div>
+  </div>
+</div>

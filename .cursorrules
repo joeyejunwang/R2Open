@@ -1,0 +1,6 @@
+# Project Context: R2Open
+- App ID: com.r2open.app (Version 0.2.3)
+- Tech Stack: Electron (v44), esbuild (v0.28), AWS S3 Client (@aws-sdk/client-s3 v3.1125)
+- Packaging: electron-builder targeting Windows NSIS setup (`${productName}_${version}_${arch}-setup.${ext}`)
+- NSIS Config: Interactive installer (`oneClick: false`), custom directory prompt enabled (`allowToChangeInstallationDirectory: true`)
+- find and fix some issues, no test, no too much words output, do it directly

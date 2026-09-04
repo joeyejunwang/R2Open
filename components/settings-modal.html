@@ -1,0 +1,79 @@
+<!-- Settings Modal -->
+<div class="modal-overlay" id="settingsModal">
+  <div class="modal" role="dialog" aria-labelledby="settingsTitle">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" id="settingsTitle">Cloudflare Settings</div>
+        <div class="modal-subtitle">Configure your R2 API credentials</div>
+      </div>
+      <button class="close-btn" id="closeSettings" aria-label="Close">×</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="form-section">
+        <span class="section-label">Cloudflare Account</span>
+
+        <div class="form-group">
+          <div class="form-label"><span>Account ID</span></div>
+          <div class="input-wrapper">
+            <input type="text" class="form-input" id="accountId" placeholder="e.g. 1a2b3c4d5e6f7g8h9i0j" autocomplete="off">
+          </div>
+          <div class="form-hint">Found in Cloudflare dashboard → R2 → Overview → Account ID</div>
+          <div class="form-error" id="accountIdError">Account ID is required</div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <span class="section-label">R2 API Token</span>
+
+        <div class="form-group">
+          <div class="form-label"><span>Access Key ID</span></div>
+          <div class="input-wrapper">
+            <input type="text" class="form-input" id="accessKeyId" placeholder="e.g. a1b2c3d4e5f6g7h8i9j0" autocomplete="off">
+          </div>
+          <div class="form-error" id="accessKeyIdError">Access Key ID is required</div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label"><span>Secret Access Key</span></div>
+          <div class="input-wrapper">
+            <input type="password" class="form-input with-toggle" id="secretAccessKey" placeholder="••••••••••••••••" autocomplete="off">
+            <button type="button" class="toggle-btn" id="toggleSecret" aria-label="Toggle visibility">👁</button>
+          </div>
+          <div class="form-hint">Keep this secret. Used to sign requests to R2.</div>
+          <div class="form-error" id="secretAccessKeyError">Secret Access Key is required</div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <span class="section-label">Endpoint</span>
+
+        <div class="form-group">
+          <div class="form-label">
+            <span>R2 Endpoint URL <em style="font-style:normal;color:#94a3b8;font-size:11px;">(auto-generated)</em></span>
+          </div>
+          <div class="input-wrapper">
+            <input type="text" class="form-input" id="endpoint" placeholder="https://<accountid>.r2.cloudflarestorage.com" readonly>
+          </div>
+          <div class="form-hint">Auto-filled from your Account ID. You can override if you use a custom domain.</div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="test-row">
+          <button type="button" class="test-btn" id="testConnection">Test Connection</button>
+        </div>
+        <div class="test-status" id="testStatus"></div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <div class="footer-info" id="footerInfo">No saved credentials</div>
+      <div class="footer-actions">
+        <button type="button" class="btn btn-danger" id="clearSettings">Clear</button>
+        <button type="button" class="btn btn-secondary" id="cancelSettings">Cancel</button>
+        <button type="button" class="btn btn-primary" id="saveSettings">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

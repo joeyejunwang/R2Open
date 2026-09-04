@@ -1,0 +1,31 @@
+<!-- New Bucket Modal -->
+<div class="modal-overlay" id="newBucketModal">
+  <div class="modal" role="dialog" aria-labelledby="newBucketTitle">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" id="newBucketTitle">Create New Bucket</div>
+        <div class="modal-subtitle">Create a new R2 bucket in Cloudflare dashboard</div>
+      </div>
+      <button class="close-btn" id="closeNewBucket" aria-label="Close">×</button>
+    </div>
+
+    <div class="modal-body">
+      <p class="modal-info">To create a new R2 bucket, you need to use the Cloudflare dashboard.</p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-primary" id="openCloudflareBtn">Open Cloudflare Dashboard</button>
+      </div>
+      <div class="modal-divider">
+        <span>or</span>
+      </div>
+      <p class="modal-info-sub">After creating your bucket, click Refresh to see it in the list.</p>
+    </div>
+
+    <div class="modal-footer">
+      <div class="footer-info" id="newBucketFooterInfo"></div>
+      <div class="footer-actions">
+        <button type="button" class="btn btn-secondary" id="cancelNewBucket">Cancel</button>
+        <button type="button" class="btn btn-primary" id="refreshBuckets">↻ Refresh List</button>
+      </div>
+    </div>
+  </div>
+</div>

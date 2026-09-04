@@ -1,0 +1,16 @@
+# Node dependencies
+node_modules/
+cf2/node_modules/
+
+# Electron-builder & build outputs
+dist/
+out/
+build/
+*.exe
+*.AppImage
+*.dmg
+
+# Logs & Environment
+*.log
+.env
+.DS_Store
